@@ -20,11 +20,7 @@ def lenet_5(input_shape,
     
     Returns
     ----------
-    Pass
-    
-    Raises
-    ----------
-    ValueError: 
+    net: 
     
     """
     net_input = Input(input_shape)
@@ -54,8 +50,8 @@ def lenet_5(input_shape,
     
     pred_score = classifier_activation? Activation(classifier_activation)(fc3) : fc3
     
-    model = Model(net_input, pred_score, name="lenet-5")
+    net = Model(net_input, pred_score, name="lenet-5")
                           
-    return model
+    return net
     
     
