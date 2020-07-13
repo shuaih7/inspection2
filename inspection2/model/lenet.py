@@ -15,6 +15,11 @@ class LeNet_5(Base):
     def __init__(self):
         super(LeNet_5, self).__init__()
         
+    def load_data(self, load_func=None, *args, **kwargs):
+        if load_func is not None: 
+            self.x_train, self.y_train, self.x_valid, self.y_valid = load_func(*args, **kwargs)
+        else: self.x_train, self.y_train, self.x_valid, self.y_valid = load_mnist(*args, **kwargs)
+        
     def config_net(self):
         if self.net is None: self.net = lenet_5(input_shape=(28, 28, 1), use_batch_norm=True, batch_trainable=True)
         self.net.summary()
