@@ -3,9 +3,17 @@
 # This is the general test script ...
 
 import os
-import logging
+from package import foo, foo1
 
-error_type = Exception
+foo1()
 
-raise error_type("Success")
-
+class lenet(object):
+    def __init__(self):
+        pass
+        
+class base(object):
+    def __init__(self):
+        self.net = lenet
+        print("The name is {0}".format(self.net.__name__))
+        
+bse = base()

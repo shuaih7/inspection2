@@ -9,6 +9,8 @@ model.is_shuffle = True
 
 model.log_dir = r"E:\Deep_Learning\inspection2\lenet_5\log"
 model.model_dir = r"E:\Deep_Learning\inspection2\lenet_5\model"
+data_dir = r"E:\Deep_Learning\inspection2\lenet_5\dataset"
 
+model.load_data(data_dir, data_dir, data_dir, data_dir, num_classes=10)
 model.train()
 

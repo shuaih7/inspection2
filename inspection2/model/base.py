@@ -23,6 +23,10 @@ class Base(ABC):
         self.metrics    = None
         self.callbacks  = None
         
+        self.load_func       = None
+        self.preprocess_func = None
+        self.packaging_func  = None
+        
         # Model default parameters
         self.batch_size = 32
         self.is_shuffle = True
@@ -33,6 +37,7 @@ class Base(ABC):
         self.y_train  = None
         self.x_valid  = None
         self.y_valid  = None
+        self.input_shape = None
         
     def config_logger(self, logger=None):
         self.logger = Logger(logger, name=self.name, log_dir=self.log_dir)
@@ -41,8 +46,24 @@ class Base(ABC):
         pass
         
     @abstractmethod
-    def load_data(self, load_func=None, *args, **kwargs) -> function:
-        if load_func is not None: self.x_train, self.y_train, self.x_valid, self.y_valid = load_func(*args, **kwargs)
+    def load_data(self, *args, **kwargs):
+        if self.load_func is not None: 
+            x_train, y_train, x_valid, y_valid = self.load_func(*args, **kwargs)
+            
+            if self.preprocess_func is not None: 
+                self.x_train, self.y_train, self.x_valid, self.y_valid = self.preprocess_func(x_train, y_train, x_valid, y_valid)
+            else:
+                self.x_train, self.y_train, self.x_valid, self.y_valid = x_train, y_train, x_valid, y_valid
+                
+        if self.input_shape is None and self.x_train is not None: self.input_shape = x_train.shape[1:]
+        
+    @abstractmethod
+    def config_load(self, load_func=None):
+        if load_func is not None: self.load_func = load_func
+        
+    # Pre-processing function will be nested in load_data()
+    def config_preprocess(self, preprocess_func=None):
+        if preprocess_func is not None: self.preprocess_func = preprocess_func
         
     @abstractmethod
     def config_net(self, net=None) -> tf.keras.models.Model:
@@ -63,13 +84,37 @@ class Base(ABC):
     @abstractmethod
     def config_callbacks(self, callbacks=None) -> tf.keras.callbacks:
         if callbacks is not None: self.callbacks = callbacks
+    
+    # Packing function will be nested in predict()
+    def config_packaging(self, packaging_func=None):
+        if packaging_func is not None: self.packaging_func = packaging_func
         
     def build(self):
-        self.config_net()
-        self.config_optimizer()
-        self.config_loss()
-        self.config_metrics()
-        self.config_callbacks()
+        try:
+            self.config_logger()
+            self.logger.info("Start building up {0}".format(self.name) + "...")
+            
+            self.config_load()
+            self.logger.info("Successfully configured load function.")
+            
+            self.config_net()
+            self.logger.info("Successfully construct the model.")
+            
+            self.config_optimizer()
+            self.logger.info("Successfully configured optimizer.")
+            
+            self.config_loss()
+            self.logger.info("Successfully configured loss function.")
+            
+            self.config_metrics()
+            self.logger.info("Successfully configured evaluation metrics.")
+            
+            self.config_callbacks()
+            self.logger.info("Successfully configured callback functions.")
+            
+        except Exception as expt:
+            self.logger.error(expt)
+            
         self.is_built = True
         
     def train(self):
@@ -77,6 +122,7 @@ class Base(ABC):
         
         x_train, y_train = self.x_train, self.y_train
         x_valid, y_valid = self.x_valid, self.y_valid
+        
         if x_train is None or y_train is None: 
             self.logger.error("The training data or label should not be None.", error_type=ValueError)
         elif x_valid is None or y_valid is None: 
