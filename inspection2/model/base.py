@@ -3,7 +3,6 @@
 # Header ...
 
 import os
-import tensorflow as tf
 from abc import ABC, abstractmethod
 from inspection2.utils.logger import Logger
 
@@ -66,23 +65,23 @@ class Base(ABC):
         if preprocess_func is not None: self.preprocess_func = preprocess_func
         
     @abstractmethod
-    def config_net(self, net=None) -> tf.keras.models.Model:
+    def config_net(self, net=None):
         if net is not None: self.net = net
         
     @abstractmethod
-    def config_optimizer(self, optmizer=None) -> tf.keras.optimizers:
+    def config_optimizer(self, optmizer=None):
         if optimizer is not None: self.optimizer = optimizer
         
     @abstractmethod
-    def config_loss(self, loss=None) -> tf.keras.losses:
+    def config_loss(self, loss=None):
         if loss is not None: self.loss = loss
         
     @abstractmethod
-    def config_metrics(self, metrics=None) -> tf.keras.metrics:
+    def config_metrics(self, metrics=None):
         if metrics is not None: self.metrics = metrics
         
     @abstractmethod
-    def config_callbacks(self, callbacks=None) -> tf.keras.callbacks:
+    def config_callbacks(self, callbacks=None):
         if callbacks is not None: self.callbacks = callbacks
     
     # Packing function will be nested in predict()
@@ -93,9 +92,6 @@ class Base(ABC):
         try:
             self.config_logger()
             self.logger.info("Start building up {0}".format(self.name) + "...")
-            
-            self.config_load()
-            self.logger.info("Successfully configured load function.")
             
             self.config_net()
             self.logger.info("Successfully construct the model.")

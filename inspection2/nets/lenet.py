@@ -2,9 +2,8 @@
 
 # Header ...
 
-import tensorflow as tf
-from tensorflow.keras.models import Model
-from tensorflow.keras.layers import Input, Conv2D, Dense, BatchNormalization, MaxPooling2D, Activation, Flatten
+from inspection2.backend.models import Model
+from inspection2.backend.layers import Input, Conv2D, Dense, BatchNormalization, MaxPooling2D, Activation, Flatten
 
 
 def lenet_5(input_shape, 

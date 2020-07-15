@@ -3,13 +3,12 @@
 # Header ...
 
 import os
-import tensorflow as tf
-from tensorflow.keras.callbacks import ModelCheckpoint, ReduceLROnPlateau, TensorBoard
-
 from inspection2.nets import lenet_5
 from inspection2.model.base import Base
 from inspection2.data.load import load_mnist
+from inspection2.backend.optimizers import Adam
 from inspection2.data.preprocess import normalize_pixel
+from inspection2.backend.callbacks import ModelCheckpoint, ReduceLROnPlateau, TensorBoard
 
 
 class LeNet_5(Base):
@@ -20,11 +19,9 @@ class LeNet_5(Base):
         if self.load_func is None: self.config_load()
         x_train, y_train, x_valid, y_valid = self.load_func(*args, **kwargs)
         
-        self.config_preprocess()
-        if self.preprocess_func is not None:
-            self.x_train, self.y_train, self.x_valid, self.y_valid = self.preprocess_func(x_train, y_train, x_valid, y_valid, mode="train")
-        else:
-            self.x_train, self.y_train, self.x_valid, self.y_valid = x_train, y_train, x_valid, y_valid
+        if self.preprocess_func is None: self.config_preprocess()
+        if self.preprocess_func is not None: self.x_train, self.y_train, self.x_valid, self.y_valid = self.preprocess_func(x_train, y_train, x_valid, y_valid, mode="train")
+        else: self.x_train, self.y_train, self.x_valid, self.y_valid = x_train, y_train, x_valid, y_valid
             
         if self.input_shape is None and self.x_train is not None: self.input_shape = x_train.shape[1:]
         
@@ -44,7 +41,7 @@ class LeNet_5(Base):
         
     def config_optimizer(self, optimizer=None):
         if optimizer is not None: self.optimizer = optimizer
-        elif self.optimizer is None: self.optimizer = tf.keras.optimizers.Adam(lr=0.01)  
+        elif self.optimizer is None: self.optimizer = Adam(lr=0.01)  
         
     def config_loss(self, loss=None):
         if loss is not None: self.loss = loss

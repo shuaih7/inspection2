@@ -4,20 +4,12 @@
 
 #import os
 from tensorflow.keras import layers
-#import Input, InputLayer
-#from tensorflow.keras.layers import Conv2d, Dense, BatchNormalization, MaxPooling2D, Activation, Flatten
+from tensorflow.keras.layers import *
 
 
-def Input(shape=None, batch_size=None, name=None, dtype=None, sparse=False, tensor=None, ragged=False, **kwargs):
-    return layers.Input(shape=shape, batch_size=batch_size, name=name, dtype=dtype, sparse=sparse, tensor=tensor, ragged=ragged, **kwargs)
+del globals()["Conv2D"]
     
-    
-def InputLayer(input_shape=None, batch_size=None, dtype=None, input_tensor=None, sparse=False, name=None, ragged=False, **kwargs):
-    # Note: It is generally recommend to use the functional layer API via Input, (which creates an InputLayer) without directly using InputLayer.
-    return layers.InputLayer(input_shape=input_shape, batch_size=batch_size, dtype=dtype, input_tensor=input_tensor, sparse=sparse, name=name, ragged=ragged, **kwargs)
-    
-    
-def Conv2d(
+def Conv2D(
     filters, kernel_size, strides=(1, 1), padding='valid', data_format=None,
     dilation_rate=(1, 1), activation=None, use_bias=True,
     kernel_initializer='glorot_uniform', bias_initializer='zeros',
@@ -42,6 +34,10 @@ def Conv2d(
     
     cur_layer = layers.BatchNormalization(trainable=batch_trainable)(cur_layer)
     return layers.Activation(activation)(cur_layer)
+    
+    
+def GroupNormalization(*args, **kwargs):
+    pass
     
     
 
