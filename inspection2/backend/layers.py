@@ -36,8 +36,14 @@ def Conv2D(
     return layers.Activation(activation)(cur_layer)
     
     
+def ResConv2D(*args, **kwargs):
+    pass
+    
 def GroupNormalization(*args, **kwargs):
     pass
+    
+    
+
     
     
 

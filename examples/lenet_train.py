@@ -1,6 +1,6 @@
 import os
 import tensorflow as tf
-from inspection2.model.lenet import LeNet_5
+from inspection2.models.lenet import LeNet_5
 
 model = LeNet_5()
 model.batch_size = 128
