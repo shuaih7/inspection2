@@ -28,3 +28,9 @@
 2020-07-15 13:54:41,839 - inspection2.utils.logger - INFO - Successfully configured loss function.
 2020-07-15 13:54:41,840 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
 2020-07-15 13:54:41,845 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-15 15:16:59,901 - inspection2.utils.logger - INFO - Start building up project...
+2020-07-15 15:17:00,604 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-15 15:17:00,615 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-15 15:17:00,631 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-15 15:17:00,646 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-15 15:17:00,676 - inspection2.utils.logger - INFO - Successfully configured callback functions.
