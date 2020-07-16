@@ -4,10 +4,10 @@
 
 import os
 from inspection2.nets import lenet_5
-from inspection2.model.base import Base
+from inspection2.models import Base
 from inspection2.data.load import load_mnist
 from inspection2.backend.optimizers import Adam
-from inspection2.data.preprocess import normalize_pixel
+from inspection2.data.preprocess import norm_pixel
 from inspection2.backend.callbacks import ModelCheckpoint, ReduceLROnPlateau, TensorBoard
 
 
@@ -15,14 +15,15 @@ class LeNet_5(Base):
     def __init__(self):
         super(LeNet_5, self).__init__()
         
-    def load_data(self, *args, **kwargs):
+    def load_data(self, data_param, **kwargs):
         if self.load_func is None: self.config_load()
-        x_train, y_train, x_valid, y_valid = self.load_func(*args, **kwargs)
-        
+        if self.augment_func is None: self.config_augmentation()
         if self.preprocess_func is None: self.config_preprocess()
-        if self.preprocess_func is not None: self.x_train, self.y_train, self.x_valid, self.y_valid = self.preprocess_func(x_train, y_train, x_valid, y_valid, mode="train")
-        else: self.x_train, self.y_train, self.x_valid, self.y_valid = x_train, y_train, x_valid, y_valid
-            
+      
+        x_train, y_train, x_valid, y_valid = self.load_func(data_param, **kwargs)
+        x_train, y_train, x_valid, y_valid = self.augment_func(x_train, y_train, x_valid, y_valid)
+        self.x_train, self.y_train, self.x_valid, self.y_valid = self.preprocess_func(x_train, y_train, x_valid, y_valid)
+                
         if self.input_shape is None and self.x_train is not None: self.input_shape = x_train.shape[1:]
         
     def config_load(self, load_func=None):
@@ -32,7 +33,7 @@ class LeNet_5(Base):
     # Pre-processing function will be nested in load_data()
     def config_preprocess(self, preprocess_func=None):
         if preprocess_func is not None: self.preprocess_func = preprocess_func
-        elif self.preprocess_func is None: self.preprocess_func = normalize_pixel
+        else: self.preprocess_func = norm_pixel
         
     def config_net(self, net=None):
         if net is not None: self.net = net
