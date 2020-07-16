@@ -11,6 +11,9 @@ class DataParamCls(DataParam):
         super(DataParamCls, self).__init__()
         
         # Classification parameters
+        self.img_h = None   # Modify if you would like to reshape the image height
+        self.img_w = None   # Modify if you would like to reshape the image width
+        self.img_c = None   # Modify if you would like to reshape the image channel
         self._num_classes = 10
         
         @property

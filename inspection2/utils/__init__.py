@@ -3,4 +3,5 @@
 # Header ...
 
 from .logger import Logger
-from .get_txt_list import get_txt_list
+from .read_list_from_txt import read_list_from_txt
+from .write_list_into_txt import write_list_into_txt

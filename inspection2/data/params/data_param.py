@@ -3,6 +3,7 @@
 # Header ...
 
 import os
+#from inspection2.utils import read_list_from_txt
 
 
 class DataParam(object):
@@ -66,7 +67,7 @@ class DataParam(object):
             
         @property
         def train_txt_file(self):
-            if not os.path.exists(self._train_txt_file):
+            if not os.path.isfile(self._train_txt_file):
                 raise ValueError("The path for training text files does not exist.")
             return self._train_txt_file
                 
@@ -76,13 +77,27 @@ class DataParam(object):
             
         @property
         def valid_txt_file(self):
-            if not os.path.exists(self._valid_txt_file):
+            if not os.path.isfile(self._valid_txt_file):
                 raise ValueError("The path for validation text files does not exist.")
             return self._valid_txt_file
                 
         @valid_txt_file.setter
         def valid_txt_file(self, file):
             self._valid_txt_file = file
+            
+        """
+        @property
+        def train_list(self):
+            if self._train_txt_file is not None:
+                item_list = read_list_from_txt(self._train_txt_file)
+                return item_list
+                
+        @property
+        def valid_list(self):
+            if self._valid_txt_file is not None:
+                item_list = read_list_from_txt(self._valid_txt_file)
+                return item_list
+        """
             
         @property
         def shuffle_size(self):

@@ -7,7 +7,7 @@ import glob as gb
 from sklearn.utils import shuffle
 
 
-def get_txt_list(file_path=None, file_suffix=".jpg", save_path=None, save_name="List", is_shuffle=True):
+def write_list_into_txt(file_path=None, file_suffix=".jpg", save_path=None, save_name="List", is_shuffle=True):
     if file_path is None or save_path is None: return
     file_list = gb.glob(file_path + r"/*"+file_suffix)
     if is_shuffle: file_list = shuffle(file_list)
