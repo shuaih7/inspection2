@@ -2,18 +2,15 @@
 
 # This is the general test script ...
 
-import os
-from package import foo, foo1
+import os, cv2
+import numpy as np
 
-foo1()
+a = np.ones((50,50,1), dtype=np.float32) * 10
+a += 0.1
 
-class lenet(object):
-    def __init__(self):
-        pass
-        
-class base(object):
-    def __init__(self):
-        self.net = lenet
-        print("The name is {0}".format(self.net.__name__))
-        
-bse = base()
+b = cv2.resize(a, (30,30), interpolation = cv2.INTER_LINEAR)
+
+print(b.shape)
+print(type(b[0,0]))
+print(b)
+
