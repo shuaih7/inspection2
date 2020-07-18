@@ -2,18 +2,20 @@
 
 # Header ...
 
-import os, struct, math
 import numpy as np
-from inspection2.backend.utils import to_categorical as one_hot
+import os, struct, math
+from inspection2.utils import one_hot
+from inspection2.data.preprocess import norm_pixel
+from inspection2.load.dataset.base import LoadDataset
 
 
 class LoadMnist(LoadDataset):
     def __init__(self, data_param, logger=None):
-        super(LoadSegDataset, self).__init__(data_param=data_param, logger=logger)
+        super(LoadMnist, self).__init__(data_param=data_param, logger=logger)
         
-    def config_init(self.init_func=None):
+    def config_init(self, init_func=None):
         if init_func is not None: self.init_func = init_func
-        elif self.init_func is None: self.init_func = load_mnist
+        elif self.init_func is None: self.init_func = read_mnist_from_file
         
     def config_maps(self, map_func=[], map_ext_args=[]):
         if len(map_func): 
@@ -30,17 +32,15 @@ class LoadMnist(LoadDataset):
             self.logger.error("The lengths of map functions and the extra argument not matching.")
             
 
-def read_mnist_from_file(data_param, mode="train", train_kind="train", test_kind="t10k"):
+def read_mnist_from_file(data_param, mode="train", train_kind="train", valid_kind="t10k"):
     if mode == "train":   
         kind     = train_kind
         x_path   = data_param.x_train_path
         y_dtype  = data_param.y_train_path
-        txt_file = data_param.train_txt_file
     elif mode == "valid": 
         kind     = valid_kind
         x_path   = data_param.x_valid_path
         y_dtype  = data_param.y_valid_path
-        txt_file = data_param.valid_txt_file
     else: raise ValueError("Invalid input mode.")
     
     # Load mnist data from file
@@ -53,7 +53,7 @@ def read_mnist_from_file(data_param, mode="train", train_kind="train", test_kind
             labels = np.fromfile(lbpath,dtype=np.uint8)
     else: labels = None
         
-    if os.path.isfile(labels_path):
+    if os.path.isfile(images_path):
         with open(images_path, 'rb') as imgpath:
             magic, num, rows, cols = struct.unpack('>IIII',imgpath.read(16))
             images = np.fromfile(imgpath,dtype=np.uint8).reshape(len(labels), 784)

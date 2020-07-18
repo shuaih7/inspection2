@@ -26,7 +26,7 @@ class DataParam(object):
         # Dataset Parameters
         self._train_txt_file     = None
         self._valid_txt_file     = None
-        self._shuffle_size       = 1000
+        self._shuffle_size       = 32
         self._num_parallel_calls = 4
         
         """

@@ -13,7 +13,7 @@ class LoadSegDataset(LoadDataset):
     def __init__(self, data_param, logger=None):
         super(LoadSegDataset, self).__init__(data_param=data_param, logger=logger)
         
-    def config_init(self.init_func=None):
+    def config_init(self, init_func=None):
         if init_func is not None: self.init_func = init_func
         elif self.init_func is None: self.init_func = read_list_from_txt
         

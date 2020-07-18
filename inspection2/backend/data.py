@@ -2,7 +2,8 @@
 
 # Header ...
 
-from tensorflow.data import *
+from tensorflow.data import Dataset
+from tensorflow.data.experimental import AUTOTUNE
 
 
 

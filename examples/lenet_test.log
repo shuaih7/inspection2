@@ -1,0 +1,187 @@
+2020-07-19 01:04:01,752 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 01:04:39,197 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 01:04:39,198 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 01:05:37,178 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 01:05:37,178 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 01:06:00,457 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 01:06:00,458 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 01:06:00,459 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 01:06:44,511 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 01:06:44,512 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 01:06:44,513 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 01:06:44,516 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 01:07:45,614 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 01:07:45,615 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 01:07:45,617 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 01:07:45,620 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 01:07:45,620 - inspection2.utils.logger - WARNING - 'DataParamCls' object has no attribute 'train_txt_file'
+2020-07-19 01:10:48,514 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 01:10:48,514 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 01:10:48,515 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 01:10:48,518 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 01:13:55,711 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 01:13:55,711 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 01:13:55,712 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 01:13:55,715 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 01:18:38,122 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 01:18:38,122 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 01:18:38,124 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 01:18:38,128 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 01:19:57,179 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 01:19:57,179 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 01:19:57,180 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 01:19:57,185 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 01:21:19,598 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 01:21:19,599 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 01:21:19,599 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 01:21:19,603 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 01:22:21,253 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 01:22:21,253 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 01:22:21,254 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 01:22:21,257 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 01:23:14,284 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 01:23:14,285 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 01:23:14,286 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 01:23:14,289 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 01:25:03,334 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 01:25:03,334 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 01:25:03,335 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 01:25:03,341 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 01:26:01,279 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 01:26:01,280 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 01:26:01,282 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 01:26:01,284 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 01:26:04,070 - inspection2.utils.logger - ERROR - 'LeNet_5' object has no attribute 'data_param'
+2020-07-19 01:30:32,607 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 01:30:32,608 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 01:30:32,609 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 01:30:32,612 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 01:30:35,087 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-19 01:30:35,087 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-19 01:30:35,087 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-19 01:30:35,087 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-19 01:30:35,146 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-19 01:33:26,911 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 01:33:26,911 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 01:33:26,912 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 01:33:26,915 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 01:33:29,474 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-19 01:33:29,477 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-19 01:33:29,481 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-19 01:33:29,481 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-19 01:33:29,532 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-19 01:37:28,654 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 01:37:28,654 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 01:37:28,655 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 01:37:28,658 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 01:37:31,137 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-19 01:37:31,137 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-19 01:37:31,138 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-19 01:37:31,138 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-19 01:37:31,179 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-19 01:39:32,519 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 01:39:32,519 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 01:39:32,520 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 01:39:32,525 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 01:40:28,237 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 01:40:28,238 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 01:40:28,239 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 01:40:28,243 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 01:40:30,714 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-19 01:40:30,714 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-19 01:40:30,714 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-19 01:40:30,715 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-19 01:40:30,760 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-19 01:41:13,115 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 01:41:13,115 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 01:41:13,116 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 01:41:13,121 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 01:41:15,586 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-19 01:41:15,587 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-19 01:41:15,588 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-19 01:41:15,588 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-19 01:41:15,629 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-19 01:54:21,627 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 01:54:21,628 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 01:54:21,629 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 01:54:21,633 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 01:54:24,082 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-19 01:54:24,083 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-19 01:54:24,083 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-19 01:54:24,084 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-19 01:54:24,128 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-19 01:55:28,555 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 01:55:28,555 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 01:55:28,556 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 01:55:28,560 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 02:00:35,985 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 02:00:35,986 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 02:00:35,987 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 02:00:35,991 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 02:00:38,417 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-19 02:00:38,417 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-19 02:00:38,417 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-19 02:00:38,418 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-19 02:00:38,458 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-19 02:05:56,207 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 02:05:56,208 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 02:05:56,209 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 02:05:56,213 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 02:05:58,692 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-19 02:05:58,695 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-19 02:05:58,695 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-19 02:05:58,696 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-19 02:05:58,747 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-19 02:14:26,772 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 02:14:26,772 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 02:14:26,774 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 02:14:26,780 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 02:14:29,399 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-19 02:14:29,399 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-19 02:14:29,399 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-19 02:14:29,402 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-19 02:14:29,496 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-19 02:16:04,110 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 02:16:04,110 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 02:16:04,112 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 02:16:04,118 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 02:16:06,676 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-19 02:16:06,680 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-19 02:16:06,689 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-19 02:16:06,693 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-19 02:16:06,772 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-19 02:27:16,375 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 02:27:16,375 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 02:27:16,377 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 02:27:16,385 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 02:27:18,955 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-19 02:27:18,956 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-19 02:27:18,964 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-19 02:27:18,965 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-19 02:27:19,037 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-19 02:27:32,991 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 02:27:32,992 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 02:27:32,993 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 02:27:33,000 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 02:28:34,819 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 02:28:34,819 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 02:28:34,822 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 02:28:34,829 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 02:31:44,952 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 02:31:44,952 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 02:31:44,954 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 02:31:44,961 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 02:31:47,576 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-19 02:31:47,578 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-19 02:31:47,586 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-19 02:31:47,590 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-19 02:31:47,671 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-19 02:40:13,028 - inspection2.utils.logger - WARNING - The specified model dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\model
+2020-07-19 02:40:13,029 - inspection2.utils.logger - WARNING - The specified log dir does not exist, redirecting to C:\Users\shuai\Documents\GitHub\inspection2\examples\log
+2020-07-19 02:40:13,030 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-19 02:40:13,038 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-19 02:40:15,669 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-19 02:40:15,671 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-19 02:40:15,675 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-19 02:40:15,682 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-19 02:40:15,759 - inspection2.utils.logger - INFO - Successfully configured callback functions.

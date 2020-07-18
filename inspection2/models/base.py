@@ -5,6 +5,7 @@
 import os
 from abc import ABC, abstractmethod
 from inspection2.utils.logger import Logger
+from inspection2.backend.data import AUTOTUNE
 
 
 class Base(ABC):
@@ -45,13 +46,13 @@ class Base(ABC):
         
     def check_mdoel_params(self):
         if self.name is None or self.name == "": self.name = "project"
-        if not os.path.exists(self.model.dir):
-            self.model.dir = os.path.join(os.abspath(), "model")
-            if not os.path.exists(self.model.dir): os.mkdir(self.model_dir)
+        if not os.path.exists(self.model_dir):
+            self.model_dir = os.path.join(os.getcwd(), "model")
+            if not os.path.exists(self.model_dir): os.mkdir(self.model_dir)
             self.logger.warning("The specified model dir does not exist, redirecting to {0}".format(self.model_dir))
-        if not os.path.exists(self.log.dir):
-            self.log.dir = os.path.join(os.abspath(), "log")
-            if not os.path.exists(self.log.dir): os.mkdir(self.log_dir)
+        if not os.path.exists(self.log_dir):
+            self.log_dir = os.path.join(os.getcwd(), "log")
+            if not os.path.exists(self.log_dir): os.mkdir(self.log_dir)
             self.logger.warning("The specified log dir does not exist, redirecting to {0}".format(self.log_dir))
 
     def config_gpu(self, gpu_config):
@@ -131,13 +132,16 @@ class Base(ABC):
                   verbose=verbose, shuffle=shuffle, callbacks=self.callbacks)
                   
     def train_dataset(self, batch_size=32, epochs=10, verbose=1, shuffle=True):
-        model = self.net
-        if self.valid_ds is None: validation_data = None
-        else: validation_data = self.valid_ds
-        # TODO: Config the dataset parameters ...
+        if not self.is_built: self.build()
         
+        if self.train_ds is None: self.logger.error("The training dataset is not specified.")
+        else: self.train_ds.shuffle(self.data_param.shuffle_size).repeat(1).batch(batch_size).prefetch(AUTOTUNE)
+        
+        if self.valid_ds is not None: self.valid_ds.repeat(1).batch(batch_size).prefetch(AUTOTUNE)
+        
+        model, train_ds, valid_ds = self.net, self.train_ds, self.valid_ds
         model.compile(optimizer=self.optimizer, loss=self.loss, metrics=self.metrics)
-        model.fit(x=x_train, y=y_train, validation_data=validation_data, batch_size=batch_size, epochs=epochs, 
+        model.fit(x=train_ds, validation_data=valid_ds, batch_size=batch_size, epochs=epochs, 
                   verbose=verbose, shuffle=shuffle, callbacks=self.callbacks)
                   
     def train_database(self, batch_size=32, epochs=10, verbose=1, shuffle=True):

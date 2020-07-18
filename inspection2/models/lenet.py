@@ -15,12 +15,14 @@ class LeNet_5(Base):
         super(LeNet_5, self).__init__(input_shape=input_shape, name=name, model_dir=model_dir, log_dir=log_dir)
         
     def load_data(self, data_param, **kwargs):
+        self.data_param = data_param
         ds = LoadMnist(data_param, logger=self.logger)
         self.train_ds, self.valid_ds = ds.create_dataset()
         
     def config_net(self, net=None):
         if net is not None: self.net = net
-        elif self.net is None: self.net = lenet_5(input_shape=self.input_shape, use_batch_norm=True, batch_trainable=True)
+        elif self.net is None: self.net = lenet_5(input_shape=self.input_shape, num_classes=self.data_param.num_classes, 
+                                                  use_batch_norm=True, batch_trainable=True)
         self.net.summary()
         
     def config_optimizer(self, optimizer=None):
