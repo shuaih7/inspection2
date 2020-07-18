@@ -43,6 +43,8 @@ class LoadDataset(ABC):
         self.config_maps()
         self.logger.info("Successfully construct the dataset mapping function(s).")
         
+        self.is_built = True
+        
     def create_dataset(self, **kwargs):
         train_ds = self.create_train_dataset(**kwargs)
         valid_ds = self.create_valid_dataset(**kwargs)
@@ -63,7 +65,7 @@ class LoadDataset(ABC):
                 train_ds = dataset.map(lambda x, y: tuple(py_function(func, [x, y]+ext_arg, Tout = [be_dtype(x_dtype), be_dtype(y_dtype)])), 
                                       num_parallel_calls=data_param.num_parallel_calls)
                                       
-        except Exception as expt: logger.error(expt)
+        except Exception as expt: logger.warning(expt)
 
         return train_ds
         
@@ -82,7 +84,7 @@ class LoadDataset(ABC):
                 valid_ds = dataset.map(lambda x, y: tuple(py_function(func, [x, y]+ext_arg, Tout = [be_dtype(x_dtype), be_dtype(y_dtype)])), 
                                       num_parallel_calls=data_param.num_parallel_calls)
                                       
-        except Exception as expt: logger.error(expt)
+        except Exception as expt: logger.warning(expt)
 
         return valid_ds
         

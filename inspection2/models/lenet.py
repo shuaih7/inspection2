@@ -16,7 +16,7 @@ class LeNet_5(Base):
         
     def load_data(self, data_param, **kwargs):
         ds = LoadMnist(data_param, logger=self.logger)
-        train_ds, 
+        self.train_ds, self.valid_ds = ds.create_dataset()
         
     def config_net(self, net=None):
         if net is not None: self.net = net
