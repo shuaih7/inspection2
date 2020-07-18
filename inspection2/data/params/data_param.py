@@ -11,6 +11,7 @@ class DataParam(object):
     def __init__(self):
     
         # General parameters
+        # self._mode = "train_valid"
         self._x_train_path = None
         self._y_train_path = None
         self._x_valid_path = None
@@ -19,11 +20,26 @@ class DataParam(object):
         self.x_suffix = ""
         self.y_suffix = ""
         
+        self.x_dtype  = "float32"
+        self.y_dtype  = "float32"
+        
         # Dataset Parameters
         self._train_txt_file     = None
         self._valid_txt_file     = None
         self._shuffle_size       = 1000
         self._num_parallel_calls = 4
+        
+        """
+        @property
+        def mode(self):
+            if ("train" not in self._mode.lower()) and ("valid" not in self._mode.lower()):
+                raise ValueError("The data parameter mode should include 'train' or 'valid'.")
+            return self._mode
+                
+        @mode.setter
+        def mode(self, string):
+            self._mode = string
+        """
         
         @property
         def x_train_path(self):

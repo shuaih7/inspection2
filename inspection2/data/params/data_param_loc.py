@@ -5,15 +5,16 @@
 from .data_param import DataParam
 
 
-class DataParamCls(DataParam):
+class DataParamLoc(DataParam):
 
     def __init__(self):
-        super(DataParamCls, self).__init__()
+        super(DataParamLoc, self).__init__()
         
         # Classification parameters
         self._image_h = 0             # Modify if you would like to reshape the image height
         self._image_w = 0             # Modify if you would like to reshape the image width
         self._image_c = 0             # Modify if you would like to reshape the image channel
+        self.image_dtype = "float32"  # Data type casting to after images loaded
         
         self.explicit_resize = False  # Explicitly resize the image using cv methods
         self._num_classes = 10

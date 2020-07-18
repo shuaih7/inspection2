@@ -40,9 +40,9 @@ class Logger(object):
         if is_write and self.logger is not None: self.logger.critical(message)
         print("CRITICAL - " + message)
         
-    def error(self, message, error_type=Exception, is_write=True):
+    def error(self, message, is_write=True):
         if is_write and self.logger is not None: self.logger.error(message)
-        raise error_type(message)
+        raise Exception(message)
 
 if __name__ == "__main__":
     logger = Logger(name="log", log_dir=os.getcwd())

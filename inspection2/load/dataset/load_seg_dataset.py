@@ -4,12 +4,38 @@
 
 import os, cv2
 import numpy as np
-from inspection2.backend import py_function
-from inspection2.backend.data import Dataset
-from inspection2.data.preprocess import no_preprocess
-from inspection2.utils import read_list_from_txt, np_dtype, be_dtype
+from .base import LoadDataset
+from inspection2.data.preprocess import norm_pixel
+from inspection2.utils import read_lines_from_txt, np_dtype, be_dtype
 
 
+class LoadSegDataset(LoadDataset):
+    def __init__(self, data_param, logger=None):
+        super(LoadSegDataset, self).__init__(data_param=data_param, logger=logger)
+        
+    def config_init(self.init_func=None):
+        if init_func is not None: self.init_func = init_func
+        elif self.init_func is None: self.init_func = read_list_from_txt
+        
+    def config_maps(self, map_func=[], map_ext_args=[]):
+        if len(map_func): 
+            self.map_func = map_func
+            self.map_ext_args = map_ext_args
+        elif len(self.map_func) == 0:    
+            load_func          = read_seg_data
+            load_ext_arg       = []
+            resize_func        = resize_seg_data
+            resize_ext_arg     = [self.data_param.image_size, self.data_param.label_size]
+            preprocess_func    = norm_pixel
+            preprocess_ext_arg = ["x"]
+            
+            self.map_func     = [load_func, resize_func, preprocess_func]
+            self.map_ext_args = [load_ext_arg, resize_ext_arg, preprocess_ext_arg]
+      
+        if len(map_func) != len(map_ext_args):
+            self.logger.error("The lengths of map functions and the extra argument not matching.")
+
+"""
 def load_seg_dataset(data_param, load_func=read_seg_data, preprocess_func=no_preprocess, resize_func=resize_seg_data):
     train_ds, valid_ds = None, None
     
@@ -33,7 +59,7 @@ def load_single_seg_dataset(data_param, load_func=read_seg_data, preprocess_func
                             
     x_dtype   = data_param.image_dtype
     y_dtype   = data_param.label_dtype
-    item_list = read_list_from_txt(txt_file)
+    item_list = read_lines_from_txt(txt_file)
     x_list    = [os.path.join(x_path, l + x_suffix) for l in item_list]
     y_list    = [os.path.join(y_path, l + y_suffix) for l in item_list]
     
@@ -58,9 +84,27 @@ def load_single_seg_dataset(data_param, load_func=read_seg_data, preprocess_func
                           num_parallel_calls=data_param.num_parallel_calls)
 
     return dataset
+"""    
+
+def read_list_from_txt(data_param, mode="train"):
+    if mode == "train":   
+        x_path   = data_param.x_train_path
+        y_dtype  = data_param.y_train_path
+        txt_file = data_param.train_txt_file
+    elif mode == "valid": 
+        x_path   = data_param.x_valid_path
+        y_dtype  = data_param.y_valid_path
+        txt_file = data_param.valid_txt_file
+    else: raise ValueError("Invalid input mode.")
+    
+    item_list = read_lines_from_txt(txt_file)
+    x_list    = [os.path.join(x_path, l + x_suffix) for l in item_list]
+    y_list    = [os.path.join(y_path, l + y_suffix) for l in item_list]
+    
+    return x_list, y_list
     
 
-def read_seg_data(x_item, y_item, x_type=np.float32, y_type=np.uint8):
+def read_seg_data(x_item, y_item):
     x_data = cv2.imread(x_item, -1)
     y_data = cv2.imread(y_item, -1)
     

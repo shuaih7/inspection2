@@ -5,17 +5,17 @@
 import os
 from abc import ABC, abstractmethod
 from inspection2.utils.logger import Logger
-from inspection2.data.preprocess import no_preprocess
-from inspection2.data.augmentations import no_augment
 
 
 class Base(ABC):
-    def __init__(self, name="project", model_dir=None, log_dir=None):
+    def __init__(self, input_shape=None, name="project", model_dir=None, log_dir=None):
         # Basic parameters:
-        self.name       = name
-        self.model_dir  = model_dir
-        self.log_dir    = log_dir
-        self.logger     = Logger(logger=None, name=self.name, log_dir=self.log_dir)
+        self.input_shape = input_shape
+        self.name        = name
+        self.model_dir   = model_dir
+        self.log_dir     = log_dir
+        self.logger      = Logger(logger=None, name=self.name, log_dir=self.log_dir)
+        self.check_mdoel_params()
   
         # Model configurations
         self.net        = None
@@ -25,9 +25,6 @@ class Base(ABC):
         self.callbacks  = None
         
         # Model fucntions initialization
-        self.load_func       = None
-        self.preprocess_func = None
-        self.augment_func    = None
         self.packaging_func  = None
         
         # Model default parameters
@@ -42,37 +39,27 @@ class Base(ABC):
         self.y_train     = None
         self.x_valid     = None
         self.y_valid     = None
-        self.valid_data  = None
-        self.input_shape = None
+        
+        self.train_ds    = None
+        self.valid_ds    = None
+        
+    def check_mdoel_params(self):
+        if self.name is None or self.name == "": self.name = "project"
+        if not os.path.exists(self.model.dir):
+            self.model.dir = os.path.join(os.abspath(), "model")
+            if not os.path.exists(self.model.dir): os.mkdir(self.model_dir)
+            self.logger.warning("The specified model dir does not exist, redirecting to {0}".format(self.model_dir))
+        if not os.path.exists(self.log.dir):
+            self.log.dir = os.path.join(os.abspath(), "log")
+            if not os.path.exists(self.log.dir): os.mkdir(self.log_dir)
+            self.logger.warning("The specified log dir does not exist, redirecting to {0}".format(self.log_dir))
 
     def config_gpu(self, gpu_config):
         pass
         
     @abstractmethod
     def load_data(self, data_param, **kwargs):
-        if self.load_func is None: self.config_load()
-        if self.augment_func is None: self.config_augmentation()
-        if self.preprocess_func is None: self.config_preprocess()
-      
-        x_train, y_train, x_valid, y_valid = self.load_func(data_param, **kwargs)
-        x_train, y_train, x_valid, y_valid = self.augment_func(x_train, y_train, x_valid, y_valid)
-        self.x_train, self.y_train, self.x_valid, self.y_valid = self.preprocess_func(x_train, y_train, x_valid, y_valid)
-                
-        if self.input_shape is None and self.x_train is not None: self.input_shape = x_train.shape[1:]
-        
-    @abstractmethod
-    def config_load(self, load_func=None):
-        if load_func is not None: self.load_func = load_func
-        
-    # Pre-processing function will be nested in load_data()
-    def config_preprocess(self, preprocess_func=None):
-        if preprocess_func is not None: self.preprocess_func = preprocess_func
-        elif self.preprocess_func is None: self.preprocess_func = no_preprocess
-        
-    # Data augmentation function will be nested in load_data()
-    def config_augmentation(self, augment_func=None):
-        if augment_func is not None: self.augment_func = augment_func
-        elif self.augment_func is None: self.augment_func = no_augment
+        pass
         
     @abstractmethod
     def config_net(self, net=None):
@@ -120,14 +107,19 @@ class Base(ABC):
             
         self.is_built = True
         
-    def train(self, batch_size=32, epochs=10, verbose=1, shuffle=True):
+    def train(self, **kwargs):
+        if self.x_train is not None:    self.train_local(**kwargs)
+        elif self.train_ds is not None: self.train_dataset(**kwargs)
+        else: self.logger.error("Please specify the input data fro training.")
+        
+    def train_local(self, batch_size=32, epochs=10, verbose=1, shuffle=True):
         if not self.is_built: self.build()
         
         x_train, y_train = self.x_train, self.y_train
         x_valid, y_valid = self.x_valid, self.y_valid
         
         if x_train is None or y_train is None: 
-            self.logger.error("The training data or label should not be None.", error_type=ValueError)
+            self.logger.error("The training data or label should not be None.")
         elif x_valid is None or y_valid is None: 
             validation_data = None
             self.logger.warning("Warning: No validation set is feeded.")
@@ -137,6 +129,19 @@ class Base(ABC):
         model.compile(optimizer=self.optimizer, loss=self.loss, metrics=self.metrics)
         model.fit(x=x_train, y=y_train, validation_data=validation_data, batch_size=batch_size, epochs=epochs, 
                   verbose=verbose, shuffle=shuffle, callbacks=self.callbacks)
+                  
+    def train_dataset(self, batch_size=32, epochs=10, verbose=1, shuffle=True):
+        model = self.net
+        if self.valid_ds is None: validation_data = None
+        else: validation_data = self.valid_ds
+        # TODO: Config the dataset parameters ...
+        
+        model.compile(optimizer=self.optimizer, loss=self.loss, metrics=self.metrics)
+        model.fit(x=x_train, y=y_train, validation_data=validation_data, batch_size=batch_size, epochs=epochs, 
+                  verbose=verbose, shuffle=shuffle, callbacks=self.callbacks)
+                  
+    def train_database(self, batch_size=32, epochs=10, verbose=1, shuffle=True):
+        pass
                   
     def predict(self):
         pass
