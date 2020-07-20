@@ -16,7 +16,7 @@ class Base(ABC):
         self.model_dir   = model_dir
         self.log_dir     = log_dir
         self.logger      = Logger(logger=None, name=self.name, log_dir=self.log_dir)
-        self.check_mdoel_params()
+        self.check_model_params()
   
         # Model configurations
         self.net        = None
@@ -44,7 +44,7 @@ class Base(ABC):
         self.train_ds    = None
         self.valid_ds    = None
         
-    def check_mdoel_params(self):
+    def check_model_params(self):
         if self.name is None or self.name == "": self.name = "project"
         if not os.path.exists(self.model_dir):
             self.model_dir = os.path.join(os.getcwd(), "model")

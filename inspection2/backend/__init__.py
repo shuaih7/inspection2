@@ -3,5 +3,5 @@
 # Header ...
 
 from tensorflow import cast, py_function
-from tensorflow.dtypes import *
+from tensorflow import dtypes
 from tensorflow.keras import Input, Model, Sequential
