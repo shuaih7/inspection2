@@ -23,7 +23,7 @@ class LoadMnist(LoadDataset):
             self.map_ext_args = map_ext_args
         elif len(self.map_func) == 0:
             preprocess_func    = norm_pixel
-            preprocess_ext_arg = ["x"]
+            preprocess_ext_arg = []
             
             self.map_func     = [preprocess_func]
             self.map_ext_args = [preprocess_ext_arg]

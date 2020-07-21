@@ -105,8 +105,8 @@ def read_mnist_from_file(data_param, mode="train", train_kind="train", valid_kin
 if __name__ == "__main__":
     log_dir = r"C:\projects\inspection2\lenet\log"
     model_dir = r"C:\projects\inspection2\lenet\model"
-    data_dir  = r"C:\projects\inspection2\dataset\mnist"
-    #data_dir = r"E:\Deep_Learning\inspection2\lenet_5\dataset"
+    #data_dir  = r"C:\projects\inspection2\dataset\mnist"
+    data_dir = r"E:\Deep_Learning\inspection2\lenet_5\dataset"
 
     model = lenet_5(input_shape=(28,28,1))
 

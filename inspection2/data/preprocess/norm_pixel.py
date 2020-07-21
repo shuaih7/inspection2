@@ -4,10 +4,13 @@
 
 import os
 import numpy as np
+from inspection2.utils import be_dtype
+from inspection2.backend import cast as be_cast
 
 
-def norm_pixel(x, y, mode="x"):
-    if ("x" in mode): x = x.astype(np.float32) / 255.0
-    if ("y" in mode): y = y.astype(np.float32) / 255.0
-        
-    return x, y
+def norm_pixel(x, y):
+    return be_cast(x, dtype=be_dtype("float32")) / 255.0, y
+    
+
+def norm_both_pixel(x, y):
+    return be_cast(x, dtype=be_dtype("float32")) / 255.0, be_cast(y, dtype=be_dtype("float32")) / 255.0

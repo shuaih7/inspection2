@@ -10,8 +10,8 @@ is_shuffle = True
 
 log_dir = r"C:\projects\inspection2\lenet\log"
 model_dir = r"C:\projects\inspection2\lenet\model"
-data_dir  = r"C:\projects\inspection2\dataset\mnist"
-#ata_dir = r"E:\Deep_Learning\inspection2\lenet_5\dataset"
+#data_dir  = r"C:\projects\inspection2\dataset\mnist"
+data_dir = r"E:\Deep_Learning\inspection2\lenet_5\dataset"
 
 
 model = LeNet_5(input_shape=(28,28,1), name="lenet_test", model_dir=model_dir, log_dir=log_dir)

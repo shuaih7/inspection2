@@ -54,18 +54,18 @@ class LoadDataset(ABC):
         if not self.is_built: self.build()
         train_ds, x_dtype, y_dtype = None, self.data_param.x_dtype, self.data_param.y_dtype
         
-        #try: 
-        x, y = self.init_func(self.data_param, mode="train", **kwargs)
-        
-        # Creating the dataset API for data pipelining
-        train_ds = Dataset.from_tensor_slices((x, y))
-        
-        # Pipelining the loading processes 
-        for func, ext_arg in zip(self.map_func, self.map_ext_args):
-            train_ds = train_ds.map(lambda x, y: py_function(func, [x, y]+ext_arg, Tout = [be_dtype(x_dtype), be_dtype(y_dtype)]), 
-                                  num_parallel_calls=self.data_param.num_parallel_calls)
+        try: 
+            x, y = self.init_func(self.data_param, mode="train", **kwargs)
+            
+            # Creating the dataset API for data pipelining
+            train_ds = Dataset.from_tensor_slices((x, y))
+            
+            # Pipelining the loading processes 
+            for func, ext_arg in zip(self.map_func, self.map_ext_args):
+                train_ds = train_ds.map(lambda x, y: py_function(func, [x, y]+ext_arg, Tout = [be_dtype(x_dtype), be_dtype(y_dtype)]), 
+                                      num_parallel_calls=self.data_param.num_parallel_calls)
                                       
-        #except Exception as expt: self.logger.warning("Training dataset not loaded.")
+        except Exception as expt: self.logger.warning("Training dataset not loaded.")
 
         return train_ds
         
@@ -73,18 +73,18 @@ class LoadDataset(ABC):
         if not self.is_built: self.build()
         valid_ds, x_dtype, y_dtype = None, self.data_param.x_dtype, self.data_param.y_dtype
         
-        #try:
-        x, y = self.init_func(self.data_param, mode="valid", **kwargs)
-        
-        # Creating the dataset API for data pipelining
-        valid_ds = Dataset.from_tensor_slices((x, y))
-        
-        # Pipelining the loading processes 
-        for func, ext_arg in zip(self.map_func, self.map_ext_args):
-            valid_ds = valid_ds.map(lambda x, y: py_function(func, [x, y]+ext_arg, Tout = [be_dtype(x_dtype), be_dtype(y_dtype)]), 
-                                  num_parallel_calls=self.data_param.num_parallel_calls)
+        try:
+            x, y = self.init_func(self.data_param, mode="valid", **kwargs)
+            
+            # Creating the dataset API for data pipelining
+            valid_ds = Dataset.from_tensor_slices((x, y))
+            
+            # Pipelining the loading processes 
+            for func, ext_arg in zip(self.map_func, self.map_ext_args):
+                valid_ds = valid_ds.map(lambda x, y: py_function(func, [x, y]+ext_arg, Tout = [be_dtype(x_dtype), be_dtype(y_dtype)]), 
+                                      num_parallel_calls=self.data_param.num_parallel_calls)
                                       
-        #except Exception as expt: self.logger.warning("Validation dataset not loaded.")
+        except Exception as expt: self.logger.warning("Validation dataset not loaded.")
 
         return valid_ds
         

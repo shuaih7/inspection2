@@ -2,7 +2,7 @@
 
 # Header ...
 
-import os
+import os, sys
 from abc import ABC, abstractmethod
 from inspection2.utils.logger import Logger
 from inspection2.backend.data import AUTOTUNE
@@ -134,15 +134,17 @@ class Base(ABC):
     def train_dataset(self, batch_size=32, epochs=10, verbose=1, shuffle=True):
         if not self.is_built: self.build()
         
-        if self.train_ds is None: self.logger.error("The training dataset is not specified.")
-        else: self.train_ds.shuffle(self.data_param.shuffle_size).repeat(1).batch(batch_size).prefetch(AUTOTUNE)
-        
-        if self.valid_ds is not None: self.valid_ds.repeat(1).batch(batch_size).prefetch(AUTOTUNE)
-        
         model, train_ds, valid_ds = self.net, self.train_ds, self.valid_ds
+        if shuffle: shuffle_size = self.data_param.shuffle_size
+        else: shuffle_size = 1
+        
+        if train_ds is None: self.logger.error("The training dataset is not specified.")
+        else: train_ds = train_ds.shuffle(shuffle_size).repeat(1).batch(batch_size).prefetch(AUTOTUNE)
+        
+        if self.valid_ds is not None: valid_ds = valid_ds.repeat(1).batch(batch_size).prefetch(AUTOTUNE)
+
         model.compile(optimizer=self.optimizer, loss=self.loss, metrics=self.metrics)
-        model.fit(x=train_ds, validation_data=valid_ds, batch_size=batch_size, epochs=epochs, 
-                  verbose=verbose, shuffle=shuffle, callbacks=self.callbacks)
+        model.fit(x=train_ds, validation_data=valid_ds, epochs=epochs, verbose=verbose, callbacks=self.callbacks)
                   
     def train_database(self, batch_size=32, epochs=10, verbose=1, shuffle=True):
         pass
