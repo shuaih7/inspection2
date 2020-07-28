@@ -9,8 +9,9 @@ from inspection2.backend import cast as be_cast
 
 
 def norm_pixel(x, y):
-    return be_cast(x, dtype=be_dtype("float32")) / 255.0, y
+    x = x.numpy() / 255.0
+    return be_cast(x, dtype=be_dtype("float32")), y
     
 
-def norm_both_pixel(x, y):
+def norm_xy_pixel(x, y):
     return be_cast(x, dtype=be_dtype("float32")) / 255.0, be_cast(y, dtype=be_dtype("float32")) / 255.0

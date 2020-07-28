@@ -3,7 +3,7 @@
 # This is the general test script ...
 
 
-import os, struct, math, sys
+import os, struct, math, sys, cv2
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras.layers import *
@@ -17,6 +17,8 @@ from inspection2.load import LoadMnist
 from inspection2.backend.optimizers import Adam
 from inspection2.backend.callbacks import ModelCheckpoint, ReduceLROnPlateau, TensorBoard
 
+def norm_pixel(x, y):
+    return tf.cast(x, dtype=tf.float32) / 255.0, y
 
 def lenet_5(input_shape, 
             num_classes=10,
@@ -105,8 +107,8 @@ def read_mnist_from_file(data_param, mode="train", train_kind="train", valid_kin
 if __name__ == "__main__":
     log_dir = r"C:\projects\inspection2\lenet\log"
     model_dir = r"C:\projects\inspection2\lenet\model"
-    #data_dir  = r"C:\projects\inspection2\dataset\mnist"
-    data_dir = r"E:\Deep_Learning\inspection2\lenet_5\dataset"
+    data_dir  = r"C:\projects\inspection2\dataset\mnist"
+    #data_dir = r"E:\Deep_Learning\inspection2\lenet_5\dataset"
 
     model = lenet_5(input_shape=(28,28,1))
 
@@ -128,19 +130,29 @@ if __name__ == "__main__":
     print(labels.shape)
     
     train_ds = tf.data.Dataset.from_tensor_slices((images, labels))
-    train_ds = train_ds.repeat(1).shuffle(buffer_size=1024).batch(64)
+    
+    def generator():
+        for inp, out in train_ds:
+            yield inp, out
+    
+    train_ds = train_ds.map(lambda x, y: tf.py_function(func=norm_pixel, inp=[x, y], Tout = [tf.float32, tf.float32]), num_parallel_calls=4)
+                                      
+    train_ds = train_ds.repeat(5).shuffle(buffer_size=1024).batch(64)
     """
     index = 0
     for tr, val in train_ds:
         if index > 2: break
         print("\n\n")
         tr_np = tr.numpy()
-        print(tr_np.shape)
-        val_np = val.numpy()
-        print(val_np.shape)
+        cv2.imshow("char", tr_np[0,:,:,0])
+        cv2.waitKey(0)
+        print(tr.get_shape().as_list())
+        #\val_np = val.numpy()
+        print(val.get_shape().as_list())
         index += 1
     sys.exit()
     """
     model.compile(optimizer="Adam", loss="binary_crossentropy", metrics=["accuracy"])
-    model.fit(train_ds, verbose=1)
+    #model.fit(train_ds, verbose=1)
+    model.fit_generator(generator(), epochs=5)
     
