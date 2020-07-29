@@ -567,3 +567,171 @@
 2020-07-28 17:22:24,784 - inspection2.utils.logger - INFO - Successfully configured loss function.
 2020-07-28 17:22:24,784 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
 2020-07-28 17:22:24,806 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-29 10:56:25,499 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-29 10:56:25,501 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-29 10:56:26,453 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-29 10:56:26,453 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-29 10:56:26,453 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-29 10:56:26,453 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-29 10:56:26,468 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-29 11:00:56,922 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-29 11:00:56,922 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-29 11:00:57,830 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-29 11:00:57,830 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-29 11:00:57,830 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-29 11:00:57,830 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-29 11:00:57,830 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-29 11:03:48,122 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-29 11:03:48,122 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-29 11:03:49,050 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-29 11:03:49,051 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-29 11:03:49,051 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-29 11:03:49,051 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-29 11:03:49,054 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-29 11:04:01,041 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-29 11:04:01,041 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-29 11:04:01,954 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-29 11:04:01,955 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-29 11:04:01,955 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-29 11:04:01,955 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-29 11:04:01,957 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-29 11:08:11,559 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-29 11:08:11,559 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-29 11:08:12,480 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-29 11:08:12,480 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-29 11:08:12,480 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-29 11:08:12,480 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-29 11:08:12,483 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-29 11:09:04,233 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-29 11:09:04,233 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-29 11:09:05,164 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-29 11:09:05,164 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-29 11:09:05,164 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-29 11:09:05,164 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-29 11:09:05,167 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-29 11:10:19,958 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-29 11:10:19,959 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-29 11:10:20,955 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-29 11:10:20,955 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-29 11:10:20,955 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-29 11:10:20,955 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-29 11:10:20,970 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-29 11:12:57,041 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-29 11:12:57,041 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-29 11:12:57,951 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-29 11:12:57,951 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-29 11:12:57,951 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-29 11:12:57,951 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-29 11:12:57,951 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-29 11:14:04,173 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-29 11:14:04,173 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-29 11:14:05,077 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-29 11:14:05,077 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-29 11:14:05,077 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-29 11:14:05,077 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-29 11:14:05,077 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-29 11:15:56,763 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-29 11:15:56,763 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-29 11:15:57,673 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-29 11:15:57,673 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-29 11:15:57,673 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-29 11:15:57,673 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-29 11:15:57,673 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-29 11:18:38,624 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-29 11:18:38,624 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-29 11:18:39,538 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-29 11:18:39,538 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-29 11:18:39,538 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-29 11:18:39,538 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-29 11:18:39,538 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-29 11:27:53,763 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-29 11:27:53,763 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-29 11:27:54,693 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-29 11:27:54,693 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-29 11:27:54,693 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-29 11:27:54,693 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-29 11:27:54,693 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-29 11:29:05,750 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-29 11:29:05,750 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-29 11:29:06,669 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-29 11:29:06,669 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-29 11:29:06,669 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-29 11:29:06,669 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-29 11:29:06,669 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-29 11:41:32,276 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-29 11:41:32,277 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-29 11:41:33,574 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-29 11:41:33,574 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-29 11:41:33,575 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-29 11:41:33,575 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-29 11:41:33,586 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-29 11:42:21,471 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-29 11:42:21,471 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-29 11:42:22,481 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-29 11:42:22,482 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-29 11:42:22,482 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-29 11:42:22,483 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-29 11:42:22,488 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-29 11:43:05,608 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-29 11:43:05,608 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-29 11:43:06,614 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-29 11:43:06,615 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-29 11:43:06,616 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-29 11:43:06,616 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-29 11:43:06,624 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-29 14:57:21,930 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-29 14:57:21,930 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-29 14:57:23,124 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-29 14:57:23,132 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-29 14:57:23,141 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-29 14:57:23,158 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-29 14:57:23,201 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-29 15:47:35,128 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-29 15:47:35,128 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-29 15:47:36,393 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-29 15:47:36,400 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-29 15:47:36,410 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-29 15:47:36,427 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-29 15:47:36,471 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-29 15:49:26,455 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-29 15:49:26,455 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-29 15:49:27,888 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-29 15:49:27,905 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-29 15:49:27,921 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-29 15:49:27,938 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-29 15:49:27,967 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-29 15:52:19,343 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-29 15:52:19,343 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-29 15:52:20,706 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-29 15:52:20,723 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-29 15:52:20,740 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-29 15:52:20,756 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-29 15:52:20,799 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-29 15:54:20,080 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-29 15:54:20,080 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-29 15:54:21,393 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-29 15:54:21,405 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-29 15:54:21,411 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-29 15:54:21,422 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-29 15:54:21,449 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-29 16:02:02,295 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-29 16:02:02,295 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-29 16:02:03,493 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-29 16:02:03,505 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-29 16:02:03,511 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-29 16:02:03,522 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-29 16:02:03,549 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-29 17:27:56,604 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-29 17:27:56,604 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-29 17:27:57,980 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-29 17:27:57,989 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-29 17:27:58,003 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-29 17:27:58,014 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-29 17:27:58,057 - inspection2.utils.logger - INFO - Successfully configured callback functions.
+2020-07-29 17:29:42,280 - inspection2.utils.logger - INFO - Successfully construct the dataset initialization function.
+2020-07-29 17:29:42,280 - inspection2.utils.logger - INFO - Successfully construct the dataset mapping function(s).
+2020-07-29 17:29:43,409 - inspection2.utils.logger - INFO - Successfully construct the model.
+2020-07-29 17:29:43,419 - inspection2.utils.logger - INFO - Successfully configured optimizer.
+2020-07-29 17:29:43,435 - inspection2.utils.logger - INFO - Successfully configured loss function.
+2020-07-29 17:29:43,450 - inspection2.utils.logger - INFO - Successfully configured evaluation metrics.
+2020-07-29 17:29:43,480 - inspection2.utils.logger - INFO - Successfully configured callback functions.

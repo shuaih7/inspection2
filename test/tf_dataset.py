@@ -131,13 +131,24 @@ if __name__ == "__main__":
     
     train_ds = tf.data.Dataset.from_tensor_slices((images, labels))
     
-    def generator():
-        for inp, out in train_ds:
-            yield inp, out
-    
+    def internal_generator():
+        for image, label in zip(images, labels):
+            yield image, label
+         
+    train_ds = tf.data.Dataset.from_generator(internal_generator, (tf.float32, tf.float32), (tf.TensorShape([28,28,1]), tf.TensorShape([10])))
     train_ds = train_ds.map(lambda x, y: tf.py_function(func=norm_pixel, inp=[x, y], Tout = [tf.float32, tf.float32]), num_parallel_calls=4)
                                       
     train_ds = train_ds.repeat(5).shuffle(buffer_size=1024).batch(64)
+    
+    num = 0
+    for item in train_ds: num += 1
+    print(num)
+    sys.exit()
+    
+    def generator():
+        for inp, out in train_ds:
+            yield inp, out
+            
     """
     index = 0
     for tr, val in train_ds:
@@ -154,5 +165,5 @@ if __name__ == "__main__":
     """
     model.compile(optimizer="Adam", loss="binary_crossentropy", metrics=["accuracy"])
     #model.fit(train_ds, verbose=1)
-    model.fit_generator(generator(), epochs=5)
+    model.fit_generator(generator(), steps_per_epoch=938, verbose=1, epochs=5)
     

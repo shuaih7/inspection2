@@ -26,5 +26,5 @@ data_param.num_parallel_calls = 4
 data_param.num_classes  = 10
 
 model.load_data(data_param)
-model.train(batch_size=batch_size, epochs=epochs)
+model.train(batch_size=batch_size, epochs=epochs, steps_per_epoch=469, validation_steps=79, shuffle_size=1000)
 

@@ -111,7 +111,7 @@ class Base(ABC):
     def train(self, **kwargs):
         if self.x_train is not None:    self.train_local(**kwargs)
         elif self.train_ds is not None: self.train_dataset(**kwargs)
-        else: self.logger.error("Please specify the input data fro training.")
+        else: self.logger.error("Please specify the input data for training.")
         
     def train_local(self, batch_size=32, epochs=10, verbose=1, shuffle=True):
         if not self.is_built: self.build()
@@ -131,20 +131,46 @@ class Base(ABC):
         model.fit(x=x_train, y=y_train, validation_data=validation_data, batch_size=batch_size, epochs=epochs, 
                   verbose=verbose, shuffle=shuffle, callbacks=self.callbacks)
                   
-    def train_dataset(self, batch_size=32, epochs=10, verbose=1, shuffle=True):
+    def train_dataset(self, batch_size=32, epochs=10, verbose=1, steps_per_epoch=None, validation_steps=None, 
+                      validation_batch_size=None, shuffle=True):
+                      
         if not self.is_built: self.build()
+        def create_generator(dataset):
+            for x_batch, y_batch in dataset: yield x_batch, y_batch
         
+        # Checking for the input parameters
+        train_steps, valid_steps = 0, 0
         model, train_ds, valid_ds = self.net, self.train_ds, self.valid_ds
+        if validation_batch_size is None: validation_batch_size = batch_size
         if shuffle: shuffle_size = self.data_param.shuffle_size
         else: shuffle_size = 1
         
-        if train_ds is None: self.logger.error("The training dataset is not specified.")
-        else: train_ds = train_ds.shuffle(shuffle_size).repeat(1).batch(batch_size).prefetch(AUTOTUNE)
+        # Configure the training dataset
+        if train_ds is None: self.logger.error("The training dataset has not been specified.")
+        else:
+            train_ds  = train_ds.shuffle(shuffle_size).repeat(-1).batch(batch_size).prefetch(AUTOTUNE)
+            train_gen = create_generator(train_ds)
+            if not steps_per_epoch: 
+                self.logger.warning("The training steps per epoch has not been specified, will be automatically calculated...")
+                for item in train_ds: train_steps += 1
+            else: train_steps = steps_per_epoch
         
-        if self.valid_ds is not None: valid_ds = valid_ds.repeat(1).batch(batch_size).prefetch(AUTOTUNE)
-
+        # Config the validation dataset
+        if self.valid_ds is None:
+            self.logger.warning("The validation dataset has not been specified.")
+            valid_gen = None
+        else:
+            valid_ds  = valid_ds.batch(validation_batch_size).repeat(-1).prefetch(AUTOTUNE)
+            valid_gen = create_generator(valid_ds)
+            if not validation_steps: 
+                self.logger.warning("The validation steps has not been specified, will be automatically calculated...")
+                for item in valid_ds: valid_steps += 1
+            else: valid_steps = validation_steps
+        
+        # Model compiling and fitting
         model.compile(optimizer=self.optimizer, loss=self.loss, metrics=self.metrics)
-        model.fit(x=train_ds, validation_data=valid_ds, epochs=epochs, verbose=verbose, callbacks=self.callbacks)
+        model.fit(train_gen, steps_per_epoch=train_steps, validation_data=valid_gen, validation_steps=valid_steps, 
+                  epochs=epochs, verbose=verbose, callbacks=self.callbacks)
                   
     def train_database(self, batch_size=32, epochs=10, verbose=1, shuffle=True):
         pass
